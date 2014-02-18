@@ -1,7 +1,7 @@
 Packer scripts for setting up VMs I use for personal development.
 
 Packer and a Digital Ocean account are required. Set the `DO_CLIENT_ID` and
-`DO_API_KEY` env vars as well as the `NEW_RELIC_LICENSE` env var before
+`DO_API_KEY` env vars as well as the `NEW_RELIC_LICENSE_KEY` env var before
 building.
 
 Then:
