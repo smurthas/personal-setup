@@ -1,0 +1,26 @@
+{
+  "variables": {
+    "do_client_id":"",
+    "do_api_key":"",
+    "new_relic_license_key":""
+  },
+  "builders": [{
+    "type": "digitalocean",
+    "api_key": "{{user `do_api_key`}}",
+    "client_id": "{{user `do_client_id`}}",
+    "snapshot_name": "sms-base-{{timestamp}}",
+    "ssh_timeout": "5m",
+    "region_id": 3,
+    "image_id": "1505699"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "environment_vars": [
+      "NEW_RELIC_LICENSE_KEY={{user `new_relic_license_key`}}"
+    ],
+    "pause_before": "60s",
+    "scripts": [
+      "init.sh"
+    ]
+  }]
+}
